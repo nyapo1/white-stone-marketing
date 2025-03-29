@@ -1,6 +1,8 @@
 import React from 'react'
 import { FiArrowRight } from 'react-icons/fi';
 import { FaRegCheckCircle,FaPowerOff, FaInfoCircle, FaGem, FaRegSquare,FaUser,FaLock , FaCalendarAlt, } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
 
 const Balances = () => {
   return (
@@ -32,14 +34,25 @@ const Balances = () => {
       <FaRegCheckCircle className='text-amber-600 text-3xl mb-2 block'/>
       Details
       </div>
+
+      <Link
+      to='/help'
+      > 
       <div className='flex flex-col  justify-center items-center my-5'>
     <FaRegSquare className='text-amber-600 text-3xl mb-2 block'/>
       Help
       </div>
+      </Link>
+
+      <Link to='/about'>
+      
       <div className='flex flex-col  justify-center items-center my-5'>
     <FaInfoCircle className='text-amber-600 text-3xl mb-2 block'/>
       About Us
       </div>
+      </Link>
+
+
       <div className='flex flex-col  justify-center items-center my-5'>
     <FaGem className='text-amber-600 text-3xl mb-2 block'/>
       LEVEL
