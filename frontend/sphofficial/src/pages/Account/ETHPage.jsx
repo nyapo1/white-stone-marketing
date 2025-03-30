@@ -1,5 +1,5 @@
 import React from 'react'
-import ETH from '../../components/Account/Eth'
+import ETH from '../../components/Account/ETH'
 
 const ETHPage = () => {
   return (
