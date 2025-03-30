@@ -1,5 +1,5 @@
 import React from 'react'
-import ERC20 from '../../components/Account/ERC20'
+import ERC20 from '../../components/BindComponents/ERC20'
 
 const ERC20Page = () => {
   return (

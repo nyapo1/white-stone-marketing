@@ -14,6 +14,12 @@ import ERC20Page from './pages/Account/ERC20Page';
 import USDCPage from './pages/Account/USDCPage';
 import ETHPage from './pages/Account/ETHPage';
 import WithdrawPage from './pages/Account/WithdrawPage';
+import RRPage from './pages/HelpComponentsPages/RRPage';
+import DepositPage from './pages/HelpComponentsPages/DepositPage';
+import AboutWithdrawPage from './pages/HelpComponentsPages/AboutWithdrawPage';
+import AboutPendingPage from './pages/HelpComponentsPages/AboutPendingPage';
+import AboutBonusPage from './pages/HelpComponentsPages/AboutBonusPage';
+import AboutAdsPage from './pages/HelpComponentsPages/AboutAdsPage';
 
 export default function App() {
   return (
@@ -32,6 +38,12 @@ export default function App() {
         <Route path="/usdc" element={<USDCPage/>} />
         <Route path="/eth" element={<ETHPage/>} />
         <Route path="/withdraw" element={<WithdrawPage/>} />
+        <Route path="/rr" element={<RRPage/>} />
+        <Route path="/deposit" element={<DepositPage/>} />
+        <Route path="/about-withdraw" element={<AboutWithdrawPage/>} />
+        <Route path="/about-pending" element={<AboutPendingPage/>} />
+        <Route path="/about-ads" element={<AboutAdsPage/>} />
+        <Route path="/about-bonus" element={<AboutBonusPage/>} />
       </Routes>
     </Router>
   );

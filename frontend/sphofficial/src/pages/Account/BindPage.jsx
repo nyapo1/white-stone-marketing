@@ -1,5 +1,5 @@
 import React from 'react'
-import Bind from '../../components/Account/Bind'
+import Bind from '../../components/Bind'
 
 const BindPage = () => {
   return (

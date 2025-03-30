@@ -1,5 +1,5 @@
 import React from 'react'
-import Withdraw from '../../components/Account/Withdraw'
+import Withdraw from '../../components/Withdraw'
 
 const WithdrawPage = () => {
   return (

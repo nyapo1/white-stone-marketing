@@ -1,5 +1,5 @@
 import React from 'react'
-import USDC from '../../components/Account/USDC'
+import USDC from '../../components/BindComponents/USDC'
 
 const USDCPage = () => {
   return (
