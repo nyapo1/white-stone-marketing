@@ -14,7 +14,7 @@ const Help = () => {
   ];
 
   return (
-    <div className="p-6 bg-white rounded-lg shadow-md">
+    <div className="p-6 bg-gray-300 rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-4 text-center text-dark">
         <Link to='/account'>
         
@@ -24,7 +24,7 @@ const Help = () => {
         </h2>
       <div className="space-y-4 flex flex-col  justify-center items-center">
         {helpItems.map((item, index) => (
-          <div key={index} className="flex  space-x-10 justify-between items-start bg-gray-300 rounded-3xl p-4 w-100">
+          <div key={index} className="flex  space-x-10 justify-between items-start bg-gray-400 rounded-3xl p-4 w-100">
             <span className="text-lg">{index+1}.</span>
             <span className="text-lg">{item}</span>
             <span className="text-orange-500 text-xl"> 

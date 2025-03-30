@@ -15,17 +15,23 @@ const Balances = () => {
       </div>
     </div>
 
+    <Link to='/withdraw'>
     <button className="w-50 cursor-pointer bg-red-600 text-white py-2 rounded-lg my-6 hover:bg-red-700">
       Withdraw
     </button>
+    </Link>
+
 
     <div className=" p-4 my-6 flex justify-center">
+
+      <Link to="/bind">    
     <button className=' flex px-4 py-2 rounded-3xl border-2 justify-center items-center cursor-pointer border-amber-600 hover:bg-gray-200'>
         <p className='font-semibold text-2xl text-amber-700'> 
         Bind account
         </p>
         <FiArrowRight className="text-amber-900 ml-2 text-xl" />
     </button>
+      </Link>
     </div>
 
     <div className="grid md:grid-cols-3 lg:grid-cols-6 max-md:grid-cols-2 mt-15">
@@ -67,10 +73,10 @@ const Balances = () => {
       </div>
     </div>
 
-    <div className='mt-15 mb-5 cursor-pointer '>
+    <button className='mt-15 mb-5 cursor-pointer border-2 rounded-3xl border-red-500 px-3 py-2'>
       <p className='font-bold text-red-700 inline'>Log Out</p>
       <FaPowerOff className='inline ml-3 text-red-700'/>
-    </div>
+    </button>
   </div>
   )
 }
