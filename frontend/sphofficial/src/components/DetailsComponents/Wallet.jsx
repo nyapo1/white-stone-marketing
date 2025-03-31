@@ -23,22 +23,22 @@ const Wallet = () => {
           <h2 className="text-xl font-bold text-center">Transactions</h2>
           <div className="mt-4 flex flex-col justify-center items-center">
             {transactions.map(transaction => (
-              <div key={transaction.id} className="border-b py-2 w-3xl max-md:w-md">
+              <div key={transaction.id} className="border-b py-2 lg:w-3xl md:w-md sm:w-sm">
                 <div className="flex justify-between mb-3">
                   <span className='font-bold'>{transaction.type}</span>
                   <span className={` text-lg font-semibold ${transaction.amount < 0 ? 'text-red-500' : 'text-green-500'}`}>
                     {transaction.amount < 0 ? '-' : '+'}${Math.abs(transaction.amount)}
                   </span>
                 </div>
-                <div className="text-sm  flex justify-between">
+                <div className="text-sm  flex flex-col justify-between">
                   <p className='text-gray-500'>
                  Date: {transaction.date} 
                   </p>
-                  <div>
-                    <span className=''>
+                  <div >
+                    <span >
                    Balance before changes: 
                     </span>
-                   <span className='text-amber-600 ml-2'>
+                   <span className='text-amber-600 ml-2 '>
                     ${transaction.balance.toFixed(2)}
                     </span> 
                   </div>

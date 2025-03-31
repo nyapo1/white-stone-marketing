@@ -19,17 +19,17 @@ const Commission = () => {
             <h2 className="text-xl font-bold text-center">Transactions</h2>
             <div className="mt-4 flex flex-col justify-center items-center">
                 {transactions.map(transaction => (
-                    <div key={transaction.id} className="border-b py-2 w-3xl text-center max-md:w-md">
+                    <div key={transaction.id} className="border-b py-2  text-center lg:w-3xl md:w-md sm:w-sm">
 
                         <div className="flex justify-between mt-2">
                           
-                        <span className='font-bold'>{transaction.type}</span>
+                        <span className='font-bold mr-5'>{transaction.type}</span>
                         <span className='text-lg font-semibold text-green-500'>
                                 ${transaction.amount.toFixed(2)}
                         </span>
                         </div>
 
-                        <div className="flex justify-end mt-2">
+                        <div className="flex justify-end mt-2 ">
                             
                            Date : <span className='ml-3 text-gray-500'>{transaction.date}</span>
                         </div>

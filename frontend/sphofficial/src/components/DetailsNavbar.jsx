@@ -35,7 +35,7 @@ const DetailsNavbar = () => {
         <h1 className="ml-4 text-3xl text-dark font-bold">Account details</h1>
       </div>
       <div className='flex justify-center'>
-        <div className="flex justify-around text-lg bg-black w-2xl max-md:w-md p-2">
+        <div className="flex justify-around text-lg bg-black lg:w-2xl md:w-md sm:w-sm p-2">
           {navItems.map(({ name, route }) => (
             <Link
               key={name}
