@@ -20,6 +20,10 @@ import AboutWithdrawPage from './pages/HelpComponentsPages/AboutWithdrawPage';
 import AboutPendingPage from './pages/HelpComponentsPages/AboutPendingPage';
 import AboutBonusPage from './pages/HelpComponentsPages/AboutBonusPage';
 import AboutAdsPage from './pages/HelpComponentsPages/AboutAdsPage';
+import WalletPage from './pages/DetailsPages/WalletPage';
+import DetailsDepositPage from './pages/DetailsPages/DetailsDepositPage';
+import DetailsWithdrawPage from './pages/DetailsPages/DetailsWithdrawPage';
+import CommissionPage from './pages/DetailsPages/CommissionPage';
 
 export default function App() {
   return (
@@ -44,6 +48,10 @@ export default function App() {
         <Route path="/about-pending" element={<AboutPendingPage/>} />
         <Route path="/about-ads" element={<AboutAdsPage/>} />
         <Route path="/about-bonus" element={<AboutBonusPage/>} />
+        <Route path="/wallet" element={<WalletPage/>} />
+        <Route path="/account-deposit" element={<DetailsDepositPage/>} />
+        <Route path="/account-withdraw" element={<DetailsWithdrawPage/>} />
+        <Route path="/commission" element={<CommissionPage/>} />
       </Routes>
     </Router>
   );

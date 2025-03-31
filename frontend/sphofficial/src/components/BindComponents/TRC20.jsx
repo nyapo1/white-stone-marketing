@@ -72,7 +72,7 @@ const TRC20 = () => {
         </div>
         <button 
           type="submit" 
-          className="w-full px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600"
+          className="w-full px-4 py-2 text-white bg-amber-500 rounded hover:bg-amber-600"
         >
           Bind
         </button>

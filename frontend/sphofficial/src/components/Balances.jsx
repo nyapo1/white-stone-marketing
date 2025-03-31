@@ -16,7 +16,7 @@ const Balances = () => {
     </div>
 
     <Link to='/withdraw'>
-    <button className="w-50 cursor-pointer bg-red-600 text-white py-2 rounded-lg my-6 hover:bg-red-700">
+    <button className="w-50 cursor-pointer bg-amber-600 text-2xl text-white py-2 rounded-lg my-6 hover:bg-amber-500">
       Withdraw
     </button>
     </Link>
@@ -36,10 +36,12 @@ const Balances = () => {
 
     <div className="grid md:grid-cols-3 lg:grid-cols-6 max-md:grid-cols-2 mt-15">
 
+      <Link to='/wallet'>
       <div className='flex flex-col  justify-center items-center my-5'>
       <FaRegCheckCircle className='text-amber-600 text-3xl mb-2 block'/>
       Details
       </div>
+      </Link>
 
       <Link
       to='/help'
