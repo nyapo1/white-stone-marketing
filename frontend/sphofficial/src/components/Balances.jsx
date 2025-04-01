@@ -65,10 +65,14 @@ const Balances = () => {
     <FaGem className='text-amber-600 text-3xl mb-2 block'/>
       LEVEL
       </div>
+
+      <Link to='/login'>  
       <div className='flex flex-col  justify-center items-center my-5'>
     <FaCalendarAlt className='text-amber-600 text-3xl mb-2 block'/>
       Sign In
       </div>
+      </Link>
+
       <div className='flex flex-col  justify-center items-center my-5'>
     <FaLock className='text-amber-600 text-3xl mb-2 block'/>
       Change Passoword

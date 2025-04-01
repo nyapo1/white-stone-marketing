@@ -24,6 +24,8 @@ import WalletPage from './pages/DetailsPages/WalletPage';
 import DetailsDepositPage from './pages/DetailsPages/DetailsDepositPage';
 import DetailsWithdrawPage from './pages/DetailsPages/DetailsWithdrawPage';
 import CommissionPage from './pages/DetailsPages/CommissionPage';
+import ForgetPassword from './components/ForgetPassword';
+import Signup from './components/SignUp';
 
 export default function App() {
   return (
@@ -52,6 +54,8 @@ export default function App() {
         <Route path="/account-deposit" element={<DetailsDepositPage/>} />
         <Route path="/account-withdraw" element={<DetailsWithdrawPage/>} />
         <Route path="/commission" element={<CommissionPage/>} />
+        <Route path="/forget-password" element={<ForgetPassword/>} />
+        <Route path="/signup" element={<Signup/>} />
       </Routes>
     </Router>
   );

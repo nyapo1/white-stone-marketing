@@ -4,19 +4,24 @@ import Select from 'react-select';
 import { countryOptions } from './countryCode';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import eye icons
 
-const Login = () => {
+const Signup = () => {
   const [phone, setPhone] = useState('');
   const [countryCode, setCountryCode] = useState(countryOptions[0]);
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [invitationCode, setInvitationCode] = useState(''); // New state for invitation code
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const [phoneError, setPhoneError] = useState('');
-  const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
     setPhoneError('');
     setError('');
+    setSuccess('');
 
     // Validate phone number input
     if (!/^\d+$/.test(phone)) {
@@ -24,27 +29,34 @@ const Login = () => {
       return;
     }
 
-    if (!phone || !password) {
+    // Validate password match
+    if (password !== confirmPassword) {
+      setError('Passwords do not match.');
       return;
     }
 
     try {
-      const response = await fetch('https://your-backend-url/api/login', {
+      const response = await fetch('https://your-backend-url/api/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ phone: countryCode.value + phone, password }),
+        body: JSON.stringify({ 
+          phone: countryCode.value + phone, 
+          password, 
+          invitationCode // Include invitation code in the request
+        }),
       });
+
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || 'Incorrect password or phone number.');
+        throw new Error(data.message || 'Signup failed.');
       }
 
-      console.log('Login successful:', data);
-      localStorage.setItem('token', data.token);
-      navigate('/dashboard');
+      setSuccess('Account creation successful! Please log in.'); // Success message
+      console.log('Signup successful:', data);
+      navigate('/login'); // Redirect to login page after signup
     } catch (err) {
       setError(err.message);
       console.log(err.message);
@@ -59,7 +71,7 @@ const Login = () => {
       >
         <h2 className="text-3xl font-bold mb-4 text-center">White Stone Marketing</h2>
         <div className="flex flex-col justify-center">
-          <form onSubmit={handleLogin}>
+          <form onSubmit={handleSignup}>
             <div className="mb-4 flex">
               <Select
                 options={countryOptions}
@@ -88,7 +100,17 @@ const Login = () => {
               />
             </div>
             {phoneError && <p className="text-red-500">{phoneError}</p>}
-            <div className="mb-4 relative"> {/* Use relative positioning for the input */}
+            <div className="mb-4">
+              <input
+                type="text"
+                placeholder="Invitation Code" // New Invitation Code input
+                value={invitationCode}
+                onChange={(e) => setInvitationCode(e.target.value)}
+                className="border border-gray-500 p-2 rounded w-full"
+                required
+              />
+            </div>
+            <div className="mb-4 relative">
               <input
                 type={showPassword ? 'text' : 'password'}
                 placeholder="Password"
@@ -105,23 +127,32 @@ const Login = () => {
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </span>
             </div>
+            <div className="mb-4 relative">
+              <input
+                type={showConfirmPassword ? 'text' : 'password'}
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                className="border border-gray-500 p-2 rounded w-full"
+                required
+              />
+              <span
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                className="absolute right-2 top-3 cursor-pointer"
+                title={showConfirmPassword ? 'Hide password' : 'Show password'}
+              >
+                {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+              </span>
+            </div>
             {error && <p className="text-red-500">{error}</p>}
-            <Link to='/forget-password'>
-              <div className="flex justify-between mb-4">
-                <a  className="text-blue-600">FORGET?</a>
-              </div>
-            </Link>
-            <button type="submit" className="bg-green-500 cursor-pointer text-white py-2 rounded w-full hover:bg-green-600">Log In</button>
+            {success && <p className="text-green-500">{success}</p>}
+            <button type="submit" className="bg-green-500 cursor-pointer text-white py-2 rounded w-full hover:bg-green-600">Sign Up</button>
           </form>
-          <p className="mt-4 text-center">Don't have an account yet?
-            <Link to='/signup'>
-             <a  className="text-blue-600 ml-3">Sign Up</a>
-            </Link>
-          </p>
+          <p className="mt-4 text-center">Already have an account? <Link to="/login" className="text-blue-600">Log In</Link></p>
         </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Signup;
