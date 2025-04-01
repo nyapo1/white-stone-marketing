@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Select from 'react-select'; // Make sure to install react-select
 import { countryOptions } from './countryCode';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import eye icons
+import { Link } from 'react-router-dom';
 
 const ForgetPassword = () => {
   const [phone, setPhone] = useState('');
@@ -172,6 +173,10 @@ const ForgetPassword = () => {
             Confirm
           </button>
         </form>
+
+        <div>
+        <p className="mt-4 text-center">Wanna Go back to Login or Sign Up? <Link to="/login" className="text-blue-600">Log In</Link> or  <Link to="/signup" className="text-blue-600">Sign Up</Link></p>
+        </div>
       </div>
     </div>
   );

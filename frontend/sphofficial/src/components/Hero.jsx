@@ -22,7 +22,9 @@ const Hero = () => {
       <div className="flex justify-center space-x-6 ">
           <FaRegCalendarAlt className="text-red-500 text-4xl" />
           <FaGift className="text-red-500 text-4xl" />
+          <Link to='/levels'>
           <VscSymbolVariable className="text-red-500 text-4xl" />
+          </Link>
       </div>
       <div className="text-center">
         <h1 className="text-5xl  font-bold text-gray-900">Simple Luxury Hotel</h1>

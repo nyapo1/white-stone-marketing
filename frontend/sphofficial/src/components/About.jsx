@@ -53,7 +53,7 @@ const About = () => {
         About Us
       </h2>
       <h3 className="text-xl font-semibold my-5">White Stone Marketing</h3>
-      <div className="space-y-4 w-150">
+      <div className="space-y-4 md:w-150 sm:w-100">
         {aboutItems.map((item, index) => (
           <div key={index} className="flex flex-col">
             <div className="p-4 bg-gray-300 flex justify-between items-center rounded-lg cursor-pointer" onClick={() => toggleExpand(index)}>

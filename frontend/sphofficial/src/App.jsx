@@ -26,6 +26,10 @@ import DetailsWithdrawPage from './pages/DetailsPages/DetailsWithdrawPage';
 import CommissionPage from './pages/DetailsPages/CommissionPage';
 import ForgetPassword from './components/ForgetPassword';
 import Signup from './components/SignUp';
+import ChangePassword from './components/ChangePassWordComponents/ChangePassword';
+import WithdrawalPassword from './components/ChangePassWordComponents/withdrawPassword';
+import Logout from './components/LogOut';
+import MembershipLevel from './components/Levels';
 
 export default function App() {
   return (
@@ -56,6 +60,10 @@ export default function App() {
         <Route path="/commission" element={<CommissionPage/>} />
         <Route path="/forget-password" element={<ForgetPassword/>} />
         <Route path="/signup" element={<Signup/>} />
+        <Route path="/change-password" element={<ChangePassword/>} />
+        <Route path="/withdraw-password" element={<WithdrawalPassword/>} />
+        <Route path="/levels" element={<MembershipLevel/>} />
+       
       </Routes>
     </Router>
   );

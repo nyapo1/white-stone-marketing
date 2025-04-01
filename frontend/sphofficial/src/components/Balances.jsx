@@ -2,6 +2,7 @@ import React from 'react'
 import { FiArrowRight } from 'react-icons/fi';
 import { FaRegCheckCircle,FaPowerOff, FaInfoCircle, FaGem, FaRegSquare,FaUser,FaLock , FaCalendarAlt, } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Logout from './LogOut';
 
 
 const Balances = () => {
@@ -61,10 +62,12 @@ const Balances = () => {
       </Link>
 
 
-      <div className='flex flex-col  justify-center items-center my-5'>
-    <FaGem className='text-amber-600 text-3xl mb-2 block'/>
-      LEVEL
-      </div>
+      <Link to='/levels'>
+        <div className='flex flex-col  justify-center items-center my-5'>
+          <FaGem className='text-amber-600 text-3xl mb-2 block'/>
+        LEVEL
+        </div>
+      </Link>
 
       <Link to='/login'>  
       <div className='flex flex-col  justify-center items-center my-5'>
@@ -73,16 +76,18 @@ const Balances = () => {
       </div>
       </Link>
 
+
+    <Link to='/change-password'>
       <div className='flex flex-col  justify-center items-center my-5'>
     <FaLock className='text-amber-600 text-3xl mb-2 block'/>
       Change Passoword
       </div>
+    </Link>
+
     </div>
 
-    <button className='mt-15 mb-5 cursor-pointer border-2 rounded-3xl border-red-500 px-3 py-2'>
-      <p className='font-bold text-red-700 inline'>Log Out</p>
-      <FaPowerOff className='inline ml-3 text-red-700'/>
-    </button>
+  <Logout/>
+
   </div>
   )
 }

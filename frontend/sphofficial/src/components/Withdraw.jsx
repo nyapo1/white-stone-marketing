@@ -118,7 +118,7 @@ const Withdraw = () => {
           type="text"
           value={amount}
           onChange={handleAmountChange}
-          className={`w-full p-2 border ${isValidAmount ? 'border-gray-300' : 'border-red-500'} rounded-md mb-1`}
+          className={`w-full p-2 border ${isValidAmount ? 'border-gray-500' : 'border-red-500'} rounded-md mb-1`}
           placeholder="Enter amount"
         />
         {!isValidAmount && <p className="text-red-500 text-sm mb-2 " >Please input the amount in numbers only </p>}
